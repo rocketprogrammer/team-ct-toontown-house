@@ -14,10 +14,10 @@ if not exist "logs" (
     mkdir "logs"
 )
 echo ===============================
-echo Launching localhost client...
+echo Launching Toontown House client...
 echo Language: %LANGUAGE%
 echo User: %USER%
 echo ===============================
-D:/Panda3Ds/Panda3D-1.8.0/python/python.exe main.py -svaddr localhost -l %LANGUAGE% -u %USER%
+D:/Panda3Ds/Panda3D-1.8.0/python/python.exe main.py -svaddr house.criminals.team -l %LANGUAGE% -u %USER% -d
 echo Client ended...
 pause
