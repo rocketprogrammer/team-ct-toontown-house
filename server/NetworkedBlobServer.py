@@ -64,7 +64,8 @@ def getTargetUser(sock):
     user = sock.recv(100).split('\0',1)[0]
     print '\t',sock,'SETUSER',user
     if not os.path.isfile('/var/game/data/blobs/{0}.blob'.format(user)):
-        return False
+        # Create our user.
+        open('/var/game/data/blobs/{0}.blob'.format(user), 'a').close()
     if user in tracker:
         print 'WTF! USER ALREADY CONNECTED!',user
         return False
