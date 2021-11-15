@@ -2,22 +2,16 @@
 set LANGUAGE=en
 set USER=
 set /P USER=Username: %=%
-if not exist "server/data/blobs/%USER%.blob" (
-    echo Creating user: %USER%...
-    echo. 2>"server/data/blobs/%USER%.blob"
-)
-if not exist "server/data/toons" (
-    echo Creating 'toons' directory...
-    mkdir "server/data/toons"
-)
-if not exist "logs" (
-    mkdir "logs"
-)
+
 echo ===============================
 echo Launching Toontown House client...
 echo Language: %LANGUAGE%
 echo User: %USER%
 echo ===============================
+
+:main
+rem Change this Panda3D path.
 D:/Panda3Ds/Panda3D-1.8.0/python/python.exe main.py -svaddr house.criminals.team -l %LANGUAGE% -u %USER% -d
 echo Client ended...
 pause
+goto :main
