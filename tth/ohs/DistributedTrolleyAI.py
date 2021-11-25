@@ -115,7 +115,7 @@ class DistributedTrolleyAI(DistributedObjectAI):
     def exitGo(self): self.leaving = False
     
     def yieldZone(self):
-        zone = self.manager.allocateTrolleyZone()
+        zone = base.air.getFreeZone()
         
         gid = MinigameGenerator.generateGame(zone,filter(lambda x: x!=-1,self.toons))
         

@@ -92,6 +92,8 @@ from tth.fishing import DistributedFishingShadow/AI
 from tth.npc import DistributedNPC/AI
 from tth.npc import DistributedBlockingNPC/AI
 from tth.npc.DistributedFishermanNPC import DistributedFishermanNPC/AI
+from tth.minigame import DistributedMinigame/AI
+from tth.minigame.RingGame import DistRingGame/AI
 
 dclass DistributedAvatar : DistributedSmoothNode {
   setToonDna(blob) broadcast ram required antihack;
@@ -115,11 +117,11 @@ dclass DistributedDockBoat : DistributedObject {
 
 dclass DistributedTrolley : DistributedObject {
   setToons(int32,int32,int32,int32) broadcast required ram;
-  requestBoard(int32) p2p;
-  accept(int32,int8) broadcast;
+  requestBoard() p2p;
+  accept(int8) broadcast;
   reject(int32) broadcast antihack;
-  requestExit(int32) p2p;
-  setMinigameZone(int16) broadcast;
+  requestExit() p2p;
+  setMinigameZone(int16, int16) broadcast;
   setState(string,int32) broadcast ram;
 };
 
@@ -190,3 +192,12 @@ dclass DistributedBlockingNPC : DistributedNPC {
 
 dclass DistributedFishermanNPC : DistributedBlockingNPC {
 }
+
+dclass DistributedMinigame : DistributedObject {
+  reachedZone() p2p;
+  setState(string, int16) broadcast ram;
+  setToons(uint32array avIds) broadcast ram required;
+};
+
+dclass DistRingGame : DistributedMinigame {
+};
