@@ -5,6 +5,7 @@ from direct.interval.IntervalGlobal import *
 from panda3d.core import *
 import fileinput
 import os
+import sys
 
 PageMode_Options = 1
 PageMode_Codes = 2
