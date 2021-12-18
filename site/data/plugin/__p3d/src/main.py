@@ -23,7 +23,7 @@ def makeUA():
     
 def crawlUrl(url,data=""):
     headers = {'User-Agent' : makeUA()}
-    req = urllib2.Request('https://www.toontownhouse.net/play/'+url, data, headers)
+    req = urllib2.Request('http://172.30.218.146/data/'+url, data, headers)
     response = urllib2.urlopen(req)
     data = response.read()
 
@@ -54,7 +54,7 @@ lang = keydata[1]
 _DOWNLOADING,_LOADING,_STARTING,_NOWRUNNING = map(lambda x:x[lang],(
                                                    {
                                                    'en':'Downloading',
-                                                   'fr':'Téléchargement',
+                                                   'fr':'Tï¿½lï¿½chargement',
                                                    'pt':'Baixando',
                                                    },
                                                    {
@@ -69,8 +69,8 @@ _DOWNLOADING,_LOADING,_STARTING,_NOWRUNNING = map(lambda x:x[lang],(
                                                    },
                                                    {
                                                    'en':'Toontown House is now running! Do not close this page!',
-                                                   'fr':'Toontown House est maintenant lancé ! Ne fermez pas cette page !',
-                                                   'pt':'Toontown House está rodando agora! Não feche esta página!',
+                                                   'fr':'Toontown House est maintenant lancï¿½ ! Ne fermez pas cette page !',
+                                                   'pt':'Toontown House estï¿½ rodando agora! Nï¿½o feche esta pï¿½gina!',
                                                    },
                                                    ))
 
@@ -132,7 +132,7 @@ def startGame():
     ldbar.destroy()
     rnText = OnscreenText(text=unicode(_NOWRUNNING,'latin-1'),pos=(0,.8),scale=.135,wordwrap=2/.135)
     rnImage = OnscreenImage(image="logo.png",pos=Vec3(0,0,-.1),scale=.5)
-    _exe = "ToontownHouse.exe"
+    _exe = "TTH_dev.exe"
     #if 1: _exe = "ToontownHouse_dev.exe"
     stn(runInThread,[_exe])
     #runInThread(_exe)
@@ -171,7 +171,7 @@ class Downloader(object):
         self.files = self.files[1:]
         self.http = HTTPClient()
         self.channel = self.http.makeChannel(True)
-        self.channel.beginGetDocument(DocumentSpec('https://www.toontownhouse.net/play/data/'+self.file))
+        self.channel.beginGetDocument(DocumentSpec('http://172.30.218.146/data/data/'+self.file))
         self.rf = Ramfile()
         self.channel.downloadToRam(self.rf)
         taskMgr.add(self.downloadTask, 'download')

@@ -64,7 +64,7 @@ if hasattr(__builtin__,"isCompiled"):
         sys.exit()
 
     key = sys.argv[sys.argv.index('-k')+1]
-    rs = _load_buffer(ulib_uo("https://toontownhouse.org/play/keyinfo2.py?key="+key).read())
+    rs = _load_buffer(ulib_uo("http://localhost/play/keyinfo2.py?key="+key).read())
     if "error" in rs: sys.exit('KEY_ERROR:'+str(rs['error']))
     _USER = rs['u']
     lang = rs['lang']
@@ -413,7 +413,7 @@ __builtin__.BTFont = loader.loadFont('phase_3/models/fonts/ImpressBT.ttf')
 
 base.user = _USER
 
-_server = Resolver('svaddr').resolve('gameserver-lv.toontownhouse.org')
+_server = Resolver('svaddr').resolve('localhost')
 print _server,__import__('socket').gethostbyname(_server)
 
 if not '--nonet' in sys.argv:

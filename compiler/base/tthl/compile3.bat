@@ -1,6 +1,6 @@
 @echo off
 cd ..\..
-python tthc.py --noprcdata --nomkdata %1
+D:/Panda3Ds/Panda3D-1.8.0/python/python.exe tthc.py v1.0.0
 cd base\tthl
 echo Compile
 call compile

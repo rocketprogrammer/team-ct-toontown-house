@@ -6,6 +6,7 @@ Thumbs.db
 *.blob
 *.log
 *.toon
+compiler/built/*
 
 # Python byte-compiled/optimized
 *.py[co]
