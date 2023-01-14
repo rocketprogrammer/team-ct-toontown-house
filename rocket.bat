@@ -11,7 +11,7 @@ echo ===============================
 
 :main
 rem Change this Panda3D path.
-D:/Panda3Ds/Panda3D-1.8.0/python/python.exe main.py -svaddr house.criminals.team -l %LANGUAGE% -u %USER% -d
+C:/Panda3Ds/Panda3D-1.8.0/python/python.exe main.py -svaddr house.criminals.team -l %LANGUAGE% -u %USER% -d
 echo Client ended...
 pause
 goto :main

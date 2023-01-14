@@ -1,2 +1,2 @@
 @echo off
-D:/Panda3Ds/Panda3D-1.8.1/bin/multify.exe -c -f phase_0.mf phase_0
+C:/Panda3Ds/Panda3D-1.8.1/bin/multify.exe -c -f phase_0.mf phase_0

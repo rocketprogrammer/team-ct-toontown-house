@@ -1,6 +1,6 @@
 @echo off
 cd ..\..
-D:/Panda3Ds/Panda3D-1.8.0/python/python.exe tthc.py v1.0.0
+C:/Panda3Ds/Panda3D-1.8.0/python/python.exe tthc.py v1.0.0
 cd base\tthl
 echo Compile
 call compile
